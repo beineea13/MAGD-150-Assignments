@@ -55,7 +55,42 @@ void draw(){
   <h1>Your Sketch2 Title</h1>
   <script type="text/processing" data-processing-target="mycanvas2">
   
-  <!-- Your sketch2 goes here -->
+void draw(){
+  
+  size(1280,800);
+  background(136,199,232);
+  fill(61,126,64);
+  rect(0,525,1280,300);
+  
+  //Blocks
+  fill(119,139,153);
+  rect(mouseX,mouseY,50,50);
+  rect(pmouseX-50,pmouseY-50,50,50);
+  
+  //Person
+  fill(245,165,0);
+  rect(200,350,75,110);
+  rect(200,460,25,67);
+  rect(250,460,25,67);
+  fill(100,149,237);
+  rect(180,350,25,77);
+  rect(270,350,25,77);
+  fill(255,215,0);
+  ellipse(235,312,75,75);
+  
+  //House
+  fill(119,136,153);
+  rect(825,475,50,50);
+  rect(875,475,50,50);
+  rect(925,475,50,50);
+  rect(975,475,50,50);
+  rect(825,425,50,50);
+  rect(875,425,50,50);
+  rect(925,425,50,50);
+  rect(825,375,50,50);
+  rect(875,375,50,50);
+  rect(825,325,50,50);
+}
 
   </script>
   <canvas id="mycanvas2"></canvas>
@@ -65,7 +100,45 @@ void draw(){
   <h1>Your Sketch3 Title</h1>
   <script type="text/processing" data-processing-target="mycanvas3">
   
-  <!-- Your sketch3 goes here -->
+int pressed=0;
+int pressedState=0;
+
+void draw(){
+  size(1280,800);
+  //Click
+  if (pressedState==1){
+    background(67,81,201);
+  } else {
+  background(153,153,155);
+  //Game Systems
+  fill(15,15,15);
+  rect(200,150,200,155);
+  fill(66,165,60);
+  textSize(42);
+  text("Xbox",240,240);
+  fill(15,15,15);
+  rect(50,350,200,125);
+  textSize(42);
+  fill(81,161,222);
+  text("PS2",110,430);
+  //Equal Sign
+  fill(253,255,252);
+  textSize(125);
+  text("=",550,360);
+  //Violence
+  fill(196,28,30);
+  textSize(100);
+  text("Violence",760,360);
+  }
+}
+void mousePressed(){
+  pressed=pressed+1;
+  pressedState=(pressed%2);
+}
+void keyPressed(){
+  line(550,300,650,350);
+  line(650,300,550,350);
+}
 
   </script>
   <canvas id="mycanvas3"></canvas>
@@ -144,7 +217,57 @@ void keyPressed(){
   <h1>Your Sketch5 Title</h1>
   <script type="text/processing" data-processing-target="mycanvas5">
   
-  <!-- Your sketch5 goes here -->
+boolean mState = false;
+
+
+void setup(){
+ size(12800,800); 
+}
+
+void draw(){
+ if(mState == false){
+   background(255);
+   fill(178,123,22);
+   rect(350,300,600,250);
+   rect(360,550,50,250);
+   rect(885,550,50,250);
+   fill(219,217,215);
+   ellipse(400,400,90,90);
+   ellipse(900,400,90,90);
+   ellipse(550,350,90,90);
+   ellipse(750,350,90,90);
+   ellipse(550,500,90,90);
+   ellipse(750,500,90,90);
+   fill(0);
+   textSize(55);
+   text("Happy Thanksgiving",400,100);
+ }else{
+   background(#20AF58);
+   fill(#BF7600);
+   ellipse(mouseX,mouseY,80,40);
+   strokeWeight(5);
+   line(100,800,100,0);
+   strokeWeight(1);
+   line(250,800,250,0);
+   line(400,800,400,0);
+   line(550,800,550,0);
+   line(700,800,700,0);
+   line(850,800,850,0);
+   line(1000,800,1000,0);
+   strokeWeight(5);
+   line(1180,800,1180,0);
+   strokeWeight(1);
+   fill(0);
+   textSize(55);
+   text("Time For Football",400,400);
+ }
+   
+}
+
+void mousePressed(){
+  mState = !mState;
+  println("changed!");
+}
 
   </script>
   <canvas id="mycanvas5"></canvas>
